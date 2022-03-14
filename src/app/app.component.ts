@@ -24,11 +24,23 @@ export class AppComponent implements OnInit {
     this.formGroup = this.fb.group({
       pd: new FormControl([], Validators.required)
     });
-      this.change({value: []})
-
+    this.orderList(this.pdList);
   }
 
-  change(event) {
+  orderList(pdList: string[]) {
+    pdList.sort();
+  }
 
+  change(e) {
+    const selected = [], unSelected = [];
+
+    this.pdList.forEach(val => {
+      if (e.value.indexOf(val) !== -1)
+        selected.push(val);
+      else
+        unSelected.push(val)
+    });
+
+    this.pdList = [...selected, ...unSelected.sort()];
   }
 }
