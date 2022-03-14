@@ -1,3 +1,10 @@
-<p>
-  Start editing to see some magic happen :)
-</p>
+<form [formGroup]="formGroup" class="form">
+<div>
+  <mat-form-field>
+    <mat-label>Worktype</mat-label>
+    <mat-select formControlName="pd" multiple (selectionChange)="change($event)">
+      <mat-option *ngFor="let pd of pdList" [value]="pd">{{pd}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+</form>
