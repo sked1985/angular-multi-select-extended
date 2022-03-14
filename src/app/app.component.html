@@ -1,10 +1,34 @@
 <form [formGroup]="formGroup" class="form">
 <div>
+  <h1>Select appear on top</h1>
   <mat-form-field>
     <mat-label>Worktype</mat-label>
     <mat-select formControlName="pd" multiple (selectionChange)="change($event)">
       <mat-option *ngFor="let pd of pdList" [value]="pd">{{pd}}</mat-option>
     </mat-select>
   </mat-form-field>
+</div>
+
+<div>
+<h1>NgxMatSelectSearchModule</h1>
+<mat-form-field>
+<mat-select formControlName="bankMultiCtrl" placeholder="Worktype" [multiple]="true" #multiSelect (selectionChange)="change1($event)">
+  <mat-option>
+    <ngx-mat-select-search placeholderLabel="Find descriptor..." 
+                            [showToggleAllCheckbox]="true" 
+                            (toggleAll)="toggleSelectAll($event)"
+                            formControlName="bankMultiFilterCtrl" toggleAllCheckboxTooltipMessage="Select all"
+                            [toogleAllCheckboxTooltipPosition]
+                            ="'above'"
+                            noEntriesFoundLabel="'no matching descriptor found'"
+                            [showToggleAllCheckbox]="false">
+    <mat-icon ngxMatSelectSearchClear>delete</mat-icon>           
+  </ngx-mat-select-search>
+  </mat-option>
+  <mat-option *ngFor="let bank of filteredBanksMulti | async" [value]="bank">
+    {{bank}}
+  </mat-option>
+</mat-select>
+</mat-form-field>
 </div>
 </form>
