@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { ReplaySubject } from 'rxjs';
 
 @Component({
@@ -41,11 +41,6 @@ export class AppComponent implements OnInit {
     pdList.sort();
   }
 
-  onKey(value) {
-    console.log(value);
-    // this.dataArray= []; 
-    // this.selectSearch(value);       
-}
 
   change(e) {
     const selected = [], unSelected = [];

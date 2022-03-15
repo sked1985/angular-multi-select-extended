@@ -1,1 +1,6 @@
 @import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+.mat-option-text {
+  display: flex !important;
+  justify-content: space-between;
+}

@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { MaterialExampleModule } from '../material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
+import { SharedMultiComponent } from './shared-multi/shared-multi.component';
 
 @NgModule({
   imports: [ 
@@ -14,9 +15,9 @@ import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
     MaterialExampleModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    NgxMatSelectSearchModule,
+    NgxMatSelectSearchModule
   ],
-  declarations: [ AppComponent ],
+  declarations: [ AppComponent, SharedMultiComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
